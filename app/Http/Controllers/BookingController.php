@@ -59,6 +59,7 @@ class BookingController extends Controller
 		
 		$room->availability = "SOLD OUT"; 
 		$room->save();
+		return redirect('/');
 	}
 
     /**
