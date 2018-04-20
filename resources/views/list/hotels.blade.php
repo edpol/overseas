@@ -41,7 +41,7 @@
             <div class="col-sm-1"> </div>
             <div class="col-sm-10 panel-group" id="accordion"  style="background-color:#ddd; padding:12px;"> <!-- accordion 1 -->
 
-                @foreach ($hotels as $hotel)
+			@foreach ($hotels as $hotel)
                     <div class="panel bg-white" style="padding:12px; margin-bottom:12px;">
                         <h4 class="panel-title"> <!-- title 1 -->
                             <div class="f6"><img src="img/{{ $hotel->image }}" align="left" class="img-shrink"/></div>
@@ -68,7 +68,7 @@
                         <!-- panel body -->
                         <div id="accordion{{$hotel->id}}" class="panel-collapse collapse">
                             <div class="panel-body">
-@foreach($hotel->rooms as $room)
+@foreach($hotel->rooms as $room) 
                                 <hr style="padding:0;margin:4px 0;"/>
                                 <div class="row">
                                     <div class="col-sm-5">

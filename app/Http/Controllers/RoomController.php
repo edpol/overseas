@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Room;
+use App\Hotel;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
@@ -14,7 +15,8 @@ class RoomController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Room $room) {
-        return view('form.order', compact('room'));
+		$hotel = Hotel::find($room->hotel_id)->first();
+        return view('form.order', compact('room','hotel'));
     }
 
 

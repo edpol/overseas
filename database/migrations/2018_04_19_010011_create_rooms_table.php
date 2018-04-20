@@ -16,9 +16,10 @@ class CreateRoomsTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('rooms', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('hotel')->unsigned();
+            $table->integer('hotel_id')->unsigned();
             $table->string('name');
-            $table->integer('price'); // cents
+            $table->integer('price');   // cents
+            $table->integer('fee');     // cents
             $table->enum('availability', ['AVAILABLE', 'ON REQUEST', 'SOLD OUT'])->default('ON REQUEST'); 
             $table->integer('promos');
             $table->integer('offers');
@@ -28,7 +29,7 @@ class CreateRoomsTable extends Migration
         });
 
         Schema::table('rooms', function($table) {
-            $table->foreign('hotel')->references('id')->on('hotels');
+            $table->foreign('hotel_id')->references('id')->on('hotels');
         });
         Schema::enableForeignKeyConstraints();
 
