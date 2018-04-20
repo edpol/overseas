@@ -115,10 +115,19 @@
                                         </div>
                                         <br />
                                         Conditions and Offers:<br />
-                                        <ul><li>Meal Plan: Breakfast Included</li></ul>
-
+										@if ($room->offers>0)
+											@if ($room->offers==1)
+												<ul><li>Meal Plan: Breakfast Included</li></ul>
+											@endif
+										@endif
+										
                                         Cancellation Policy:<br />
-                                        <ul><li class="text-danger">Penalty of 1  booked night(s) when cancelling after Nov 25m 2016 04:00 PM</li></ul>
+										@if ($room->penalty>0)
+											@if ($room->penalty==3)
+												<ul><li class="text-danger">Penalty of 1 booked night(s) when cancelling after <?= date("M j Y", strtotime("+$room->penalty days")); ?> 04:00 PM</li></ul>
+<?php 																														// this should be the date the reoom is reserved - the penalty days ?>
+											@endif
+										@endif
                                     </div>
                                     <br clear="all" />
                                 </div>
