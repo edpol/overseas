@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Example of Creating Bootstrap Collapsible Accordion Widget </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="panel-group" id="accordion"> <!-- accordion 1 -->
+        <div class="panel panel-primary">
+            <div class="panel-heading"> <!-- panel-heading -->
+                <h4 class="panel-title"> <!-- title 1 -->
+                    <a data-toggle="collapse" data-parent="#accordion" href="#accordionOne">
+                    1. What is HTML ?
+                    </a>
+                </h4>
+             </div>
+            <!-- panel body -->
+            <div id="accordionOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    HTML is used for web designing, ever you think how web browser display web pages for you. <a href="http://www.expertphp.in/article/what-is-html-and-why-html-is-important" target="_blank">Learn more.</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-success">  <!-- accordion 2 -->
+            <div class="panel-heading"> 
+                <h4 class="panel-title"> <!-- title 2 -->
+                    <a data-toggle="collapse" data-parent="#accordion" href="#accordionTwo">
+                        2. What is PHP ?
+                    </a>
+                </h4>
+            </div>
+            <!-- panel body -->
+            <div id="accordionTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    You are allowed to build dynamic websites with the help of PHP. You can run PHP on any platform whether it is UNIX, Linux and windows.<a href="http://www.expertphp.in/article/what-is-php-language" target="_blank">Learn more.</a>
+                </div>
+            </div>   
+        </div>
+        <div class="panel panel-warning">  <!-- accordion 3 -->
+            <div class="panel-heading">
+                <h4 class="panel-title"> <!-- title 3 -->
+                    <a data-toggle="collapse" data-parent="#accordion" href="#accordionThree">
+                        3. What is CSS ?
+                    </a>
+                </h4>
+            </div>  
+            <div id="accordionThree" class="panel-collapse collapse">
+                <!-- panel body -->
+                <div class="panel-body">
+                    CSS stands for ‘Cascading Style Sheets’ and it is an extension to basic HTML that allows you to style your web pages. <a href="http://www.expertphp.in/article/introduction-to-cascading-style-sheets" target="_blank">Learn more.</a>
+                </div>      
+            </div>
+        </div>
+    </div>
+</body>
+</html>

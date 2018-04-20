@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Hotel;
 
 class Room extends Model
 {
@@ -10,9 +11,19 @@ class Room extends Model
         return $this->belongsTo(Hotel::class);
     }
 
-    public function lowest_price(Hotel $hotel){
-    	$alltherooms = Room::find($hotel->id);
-    	$lowestPrice = Room::where($hotel->id)->orderBy('price', 'desc')->first();
-    	return $lowestPrice;
+    public function promotions(Room $room) {
+		if ($room->promos==1) {
+			return "<br /><h6 class='text-info'>*Promos / Special Conditions Available</h6>";
+		}
+	}
+
+    public static function lowest_price(Hotel $hotel){
+    	$lowest = Room::where('hotel',$hotel->id)->orderBy('price', 'asc')->first();
+    	return ceil( $lowest->price / 100 );
+/*
+    	strval($lowest->price);
+    	return substr($price,0,-2) . "." . substr($price,-2);
+*/
     }
+
 }

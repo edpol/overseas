@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'HotelController@index');
+
+Route::get('/request/{room}', 'RoomController@index');

@@ -19,7 +19,7 @@ class CreateRoomsTable extends Migration
             $table->integer('hotel')->unsigned();
             $table->string('name');
             $table->integer('price'); // cents
-            $table->enum('availability', ['AVAILABLE', 'ON REQUEST', 'SOLD OUT']); 
+            $table->enum('availability', ['AVAILABLE', 'ON REQUEST', 'SOLD OUT'])->default('ON REQUEST'); 
             $table->integer('promos');
             $table->integer('offers');
             $table->integer('penalty');

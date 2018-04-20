@@ -13,10 +13,10 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(Room $room) {
+        return view('form.order', compact('room'));
     }
+
 
     /**
      * Show the form for creating a new resource.
