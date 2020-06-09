@@ -78,6 +78,20 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="reservation_date" class="col-md-4 col-form-label text-md-right">{{ __('Reservation Date') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="reservation_date" type="date" class="form-control{{ $errors->has('reservation_date') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('reservation_date'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('reservation_date') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 <!--
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
